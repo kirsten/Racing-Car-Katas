@@ -27,6 +27,16 @@ describe('Tyre Pressure Monitoring System', function () {
 
 			expect(target.alarmOn()).toEqual(false);
 		});
+
+    it('turns on when gas is too low', function () {
+      //	var sensor = { gasLevel: () => 2 };
+		  //	var target = new Alarm(sensor);
+
+		  //	target.check();
+
+		  //	expect(target.alarmOn()).toEqual(true);
+    });
+    it('remains off when theres plenty of gas', function () {});
 	});
 
 });
