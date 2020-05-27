@@ -1,8 +1,8 @@
 
-Sensor = function() {
+PressureSensor = function () {
 
-	Sensor.Offset = function() { return 16; };
-	Sensor.SamplePressure = function() {
+	PressureSensor.Offset = function () { return 16; };
+	PressureSensor.SamplePressure = function () {
 		// placeholder implementation that simulate a real sensor in a real tire
 
 		var pressureTelemetryValue = Math.floor(6 * Math.random() * Math.random());
@@ -10,11 +10,11 @@ Sensor = function() {
 	};
 };
 
-Sensor.prototype = {
+PressureSensor.prototype = {
 
 	popNextPressurePsiValue: function () {
-		var pressureTelemetryValue = Sensor.SamplePressure();
+		var pressureTelemetryValue = PressureSensor.SamplePressure();
 
-		return Sensor.Offset() + pressureTelemetryValue;
+		return PressureSensor.Offset() + pressureTelemetryValue;
 	}
 };

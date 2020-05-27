@@ -1,8 +1,8 @@
 
-Alarm = function(sensor) {
+Alarm = function (sensor, range) {
 
-  this._thresholdRange = [17, 21];
-	this._sensor = sensor || new Sensor();
+	this._thresholdRange = range || [17, 21];
+	this._sensor = sensor || new PressureSensor();
 	this._alarmOn = false;
 };
 
@@ -12,14 +12,13 @@ Alarm.prototype = {
 
 		var psiPressureValue = this._sensor.popNextPressurePsiValue();
 
-		if (psiPressureValue < this._thresholdRange[0] || this._thresholdRange[1] < psiPressureValue)
-		{
+		if (psiPressureValue < this._thresholdRange[0] || this._thresholdRange[1] < psiPressureValue) {
 			this._alarmOn = true;
 		}
 	},
 
 	alarmOn: function () {
-		 return this._alarmOn;
+		return this._alarmOn;
 	}
 
 };
