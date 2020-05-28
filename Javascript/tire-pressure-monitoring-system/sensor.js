@@ -18,3 +18,12 @@ PressureSensor.prototype = {
 		return PressureSensor.Offset() + pressureTelemetryValue;
 	}
 };
+
+PressureSensorAdapter = function () { }
+
+PressureSensorAdapter.prototype = {
+	getValue: function () {
+		var pressureSensor = new PressureSensor()
+		return pressureSensor.popNextPressurePsiValue()
+	}
+}
