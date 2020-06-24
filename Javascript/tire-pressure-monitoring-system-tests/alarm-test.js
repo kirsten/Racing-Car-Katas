@@ -29,8 +29,9 @@ describe('Tyre Pressure Monitoring System', function () {
 		});
 
     it('turns on when gas is too low', function () {
-        var sensor = { gasLevel: () => 2 };
-        var target = new Alarm(sensor);
+        var sensor = { getValue: () => 2 };
+        var range = [3, 10]
+        var target = new Alarm(sensor, range);
 
         target.check();
 
